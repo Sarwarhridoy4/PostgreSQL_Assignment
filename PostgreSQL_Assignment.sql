@@ -88,3 +88,13 @@ INSERT INTO sightings (sighting_id, species_id, ranger_id, sighting_time, locati
 -- End Of Setup Process
 
 --
+-- Solve problems using SQL queries
+
+-- Problem 1: Register a new ranger
+
+-- Check ranger table to ensure it exists
+SELECT * FROM rangers;
+
+INSERT INTO rangers (ranger_id, name, region)
+VALUES (6,'Derek Fox', 'Coastal Plains');
+
