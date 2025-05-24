@@ -98,3 +98,14 @@ SELECT * FROM rangers;
 INSERT INTO rangers (ranger_id, name, region)
 VALUES (6,'Derek Fox', 'Coastal Plains');
 
+-- Problem 1: Register a new ranger
+-- Expected: AffectedRows: 1
+INSERT INTO rangers (name, region)
+VALUES ('Derek Fox', 'Coastal Plains');
+
+-- Problem 2: Count unique species ever sighted
+SELECT COUNT(DISTINCT species_id) AS unique_species_count
+FROM sightings;
+
+
+
