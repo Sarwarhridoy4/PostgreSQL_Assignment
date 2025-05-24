@@ -119,3 +119,19 @@ LEFT JOIN sightings s ON r.ranger_id = s.ranger_id
 GROUP BY r.name
 ORDER BY r.name;
 
+
+-- Add a new species for showing never sighted species
+SELECT *
+FROM species;
+INSERT INTO species (species_id,common_name, scientific_name, discovery_date, conservation_status) VALUES
+(8,'Mythical Beast', 'Fantasia mythicalis', '2024-01-01', 'Endangered');
+
+-- Problem 5: List species that have never been sighted
+SELECT common_name
+FROM species
+WHERE species_id NOT IN (
+    SELECT DISTINCT species_id FROM sightings
+);
+
+
+
