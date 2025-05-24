@@ -134,4 +134,10 @@ WHERE species_id NOT IN (
 );
 
 
-
+-- Problem 6: Show the most recent 2 sightings
+SELECT sp.common_name, s.sighting_time, r.name
+FROM sightings s
+JOIN species sp ON s.species_id = sp.species_id
+JOIN rangers r ON s.ranger_id = r.ranger_id
+ORDER BY s.sighting_time DESC
+LIMIT 2;
