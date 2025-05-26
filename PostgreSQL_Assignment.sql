@@ -26,17 +26,17 @@ DROP TABLE IF EXISTS species;
 -- Table: rangers
 CREATE TABLE rangers (
     ranger_id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
-    region TEXT NOT NULL
+    name VARCAR(50) NOT NULL,
+    region VARCAR(50) NOT NULL
 );
 
 -- Table: species
 CREATE TABLE species (
     species_id SERIAL PRIMARY KEY,
-    common_name TEXT NOT NULL,
-    scientific_name TEXT NOT NULL,
+    common_name VARCAR(50) NOT NULL,
+    scientific_name VARCAR(60) NOT NULL,
     discovery_date DATE NOT NULL,
-    conservation_status TEXT NOT NULL CHECK (conservation_status IN ('Endangered', 'Vulnerable', 'Historic'))
+    conservation_status VARCAR(30) NOT NULL CHECK (conservation_status IN ('Endangered', 'Vulnerable', 'Historic'))
 );
 
 -- Table: sightings
